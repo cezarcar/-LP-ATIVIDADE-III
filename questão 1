@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <locale.h>
-void main()
+int main()
 {
     
     char nomes[5][999];
