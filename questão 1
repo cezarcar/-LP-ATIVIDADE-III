@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <locale.h>
+void main()
+{
+    
+    char nomes[5][999];
+    int idades[5];
+    float pesos[5];
+    float altura[5];
+    int i;      
+
+    
+    for (i = 0; i < 5; i++) { 
+        printf("Digite o nome da %d° pessoa: ", i + 1);
+        scanf("%s", nomes[i]);
+        
+        printf("Digite a idade de %s: ", nomes[i]);
+        scanf("%d", &idades[i]);
+
+        printf("Digite o peso de %s: ", nomes[i]);
+        scanf("%f", &pesos[i]);
+
+        printf("Digite a altura de %s: ", nomes[i]);
+        scanf("%f", &altura[i]);
+
+     
+    }
+
+    
+    int maior_altura = 0, menor_altura = 0;
+    for (i = 1; i < 5; i++) {
+        if (altura[i] > altura[maior_altura])
+            maior_altura = i;
+        if (altura[i] < altura[menor_altura])
+            menor_altura = i;
+    }
+
+    printf("\nNome da pessoa mais alta: %s, Altura: %.2f metros\n", nomes[maior_altura], altura[maior_altura]);
+    printf("Nome da pessoa mais baixa: %s, Altura: %.2f metros\n", nomes[menor_altura], altura[menor_altura]);
+
+   
+    int maior_peso = 0, menor_peso = 0;
+    for (i = 1; i < 5; i++) {
+        if (pesos[i] > pesos[maior_peso])
+            maior_peso = i;
+        if (pesos[i] < pesos[menor_peso])
+            menor_peso = i;
+    }
+
+    printf("\nNome da pessoa com maior peso: %s, Peso: %.2f kg\n", nomes[maior_peso], pesos[maior_peso]);
+    printf("Nome da pessoa com menor peso: %s, Peso: %.2f kg\n", nomes[menor_peso], pesos[menor_peso]);
+
+    int mais_velha = 0, mais_nova = 0;
+    for (i = 1; i < 5; i++) {
+        if (idades[i] > idades[mais_velha])
+            mais_velha = i;
+        if (idades[i]< idades[mais_nova])
+            mais_nova = i;
+    }
+
+    printf("\nNome da pessoa mais velha: %s, Idade: %d anos\n", nomes[mais_velha], idades[mais_velha]);
+    printf("Nome da pessoa mais nova: %s, Idade: %d anos\n", nomes[mais_nova], idades[mais_nova]);
+
+    return 0;
+}
